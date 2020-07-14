@@ -1,2 +1,2 @@
 # lhgzsmc.github.io
-lhgzsmc.github.io
+https://lhgzsmc.github.io
