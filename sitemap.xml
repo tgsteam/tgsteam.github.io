@@ -7,63 +7,38 @@
 >
 
 <url>
- <loc>https://lhgzsmc.github.io/xlsx2.html</loc>
- <priority>0.5</priority>
- <lastmod>2020-8-21</lastmod>
- <changefreq>weekly</changefreq>
-</url>
-<url>
  <loc>https://lhgzsmc.github.io/faq.html</loc>
  <priority>0.5</priority>
- <lastmod>2020-8-21</lastmod>
- <changefreq>weekly</changefreq>
+ <lastmod>2020-08-21</lastmod>
+ <changefreq>always</changefreq>
 </url>
+
 <url>
- <loc>https://jq.qq.com/?_wv=1027&amp;k=qTrlbfTB</loc>
+ <loc>https://lhgzsmc.github.io/</loc>
  <priority>0.5</priority>
- <lastmod>2020-8-21</lastmod>
- <changefreq>weekly</changefreq>
+ <lastmod>2020-08-21</lastmod>
+ <changefreq>always</changefreq>
 </url>
-<url>
- <loc>https://lhgzsmc.github.io/htmldjjs6.html</loc>
- <priority>0.5</priority>
- <lastmod>2020-8-21</lastmod>
- <changefreq>weekly</changefreq>
-</url>
-<url>
- <loc>https://www.github.com</loc>
- <priority>0.5</priority>
- <lastmod>2020-8-21</lastmod>
- <changefreq>weekly</changefreq>
-</url>
+
 <url>
  <loc>https://lhgzsmc.github.io/rules.html</loc>
  <priority>0.5</priority>
- <lastmod>2020-8-21</lastmod>
- <changefreq>weekly</changefreq>
+ <lastmod>2020-08-21</lastmod>
+ <changefreq>always</changefreq>
 </url>
+
 <url>
- <loc>https://lhgzsmc.github.io/faq.html</loc>
+ <loc>https://lhgzsmc.github.io/htmldjjs6.html</loc>
  <priority>0.5</priority>
- <lastmod>2020-8-21</lastmod>
- <changefreq>weekly</changefreq>
+ <lastmod>2020-08-21</lastmod>
+ <changefreq>always</changefreq>
 </url>
+
 <url>
- <loc>https://mc.163.com/</loc>
+ <loc>https://lhgzsmc.github.io/xlsx2.html</loc>
  <priority>0.5</priority>
- <lastmod>2020-8-21</lastmod>
- <changefreq>weekly</changefreq>
+ <lastmod>2020-08-21</lastmod>
+ <changefreq>always</changefreq>
 </url>
-<url>
- <loc>https://www.minecraft.net/</loc>
- <priority>0.5</priority>
- <lastmod>2020-8-21</lastmod>
- <changefreq>weekly</changefreq>
-</url>
-<url>
- <loc>https://minecraft-zh.gamepedia.com/index.php?title=Minecraft_Wiki&amp;variant=zh</loc>
- <priority>0.5</priority>
- <lastmod>2020-8-21</lastmod>
- <changefreq>weekly</changefreq>
-</url>
+
 </urlset>
