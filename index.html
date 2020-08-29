@@ -279,4 +279,27 @@ window.onload = tick;
 </div>
 
 </body>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyCudJAILEUGKyt_b1DRkZ_498D8SGiuVCw",
+    authDomain: "id212357.firebaseapp.com",
+    databaseURL: "https://id212357.firebaseio.com",
+    projectId: "id212357",
+    storageBucket: "id212357.appspot.com",
+    messagingSenderId: "351587635513",
+    appId: "1:351587635513:web:e2581b0b8ffa5e62c5d8e8",
+    measurementId: "G-6DLXMZMQW2"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
 </html>
