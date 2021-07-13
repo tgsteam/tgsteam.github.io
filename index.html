@@ -1,328 +1,442 @@
 <!DOCTYPE html>
-<html>
-<head>
-<title>TGteam工作室官网</title>
-<meta name="google-site-verification" content="5t39AHJmcwiS8G1_8-2WyXiO-zhfjgx_tM4Tkb_offA" />
-<meta name="google-site-verification" content="WUIIPo_pPZG8evpcvnz_laoJjCKQOEln3UttIg48Iq4" />
-<link rel="shortcut icon" href="icon/lemon2.ico" type="image/x-icon">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<script>
-function setCookie(cname,cvalue,exdays){
-  var d = new Date();
-  d.setTime(d.getTime()+(exdays*24*60*60*1000));
-  var expires = "expires="+d.toGMTString();
-  document.cookie = cname+"="+cvalue+"; "+expires;
-}
-function getCookie(cname){
-  var name = cname + "=";
-  var ca = document.cookie.split(';');
-  for(var i=0; i<ca.length; i++) {
-    var c = ca[i].trim();
-    if (c.indexOf(name)==0) { return c.substring(name.length,c.length); }
-  }
-  return "";
-}
-function checkCookie(){
-  var user=getCookie("username");
-  if (user!=""){
-    alert("欢迎 " + user + " 再次访问本站");
-  }
-  else {
-    user = prompt("请输入你的名字(可以随便输入，作为cookies保存）","");
-      if (user!="" && user!=null){
-        setCookie("username",user,30);
+<html lang="zh">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="view<port" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!--keywords关键字-->
+    <meta name="keywords" content="上清阁,上清阁官网,我的世界TGteam">
+    <!--description-->
+    <meta name="description" content="我的世界TGteam，做最佛系的mc开发者。">
+    <!--og-->
+    <meta property="og:title" content="TGteam官网" />
+    <meta property="og:url" content="https://mc.lalog.net" />
+    <meta property="og:image" content="/img/logo.png" />
+    <meta property="og:description" content="我的世界" />
+    <meta property="og:site_name" content="我的世界TGteam官网" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="keywords" content="Bootstrap, Landing page, Template, Registration, Landing">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!--Auther-->
+    <meta name="Author" contect="TGteam">
+
+
+    <title>TGteam官方网站</title>
+    <link rel="alternate" type="application/rss+xml" title="我的世界TGteam » RSS 2.0" href="https://tgsteam.github.io/" />
+
+    <link rel="icon" href="/img/logo.png">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="css/font-awesome.min.css"> -->
+    <link rel="stylesheet" href="css/line-icons.css">
+    <link rel="stylesheet" href="css/owl.carousel.css">
+    <link rel="stylesheet" href="css/owl.theme.css">
+    <link rel="stylesheet" href="css/nivo-lightbox.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/menu_sideslide.css">
+    <link rel="stylesheet" href="css/main.css">    
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <style>
+      @font-face {
+          font-family: lablog;
+          src: url('/fonts/ttf/zh/毛笔书法字体启功体繁启体.ttf')
       }
-  }
-}
-</script>
-<style>
-* {
-    box-sizing: border-box;
-}
+      .lablogttf{
+        font-family:lablog;
+        font-size: 20px;
+        color: white;
+      }
+    </style>
 
-/* body 样式 */
-body {
-    font-family: Arial;
-    margin: 0;
-}
+  </head>
+  <body>
+      <div class="menu-wrap">
+        <nav class="menu navbar">
+          <div class="icon-list navbar-collapse">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="#video-area">TGteam</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#services">官方网站</a></a>
+              </li>  
+              <li class="nav-item">
+                <a class="nav-link" href="#features">服务器</a>
+              </li>                            
+              <li class="nav-item">
+                <a class="nav-link" href="#portfolios">图片展示</a>
+              </li>            
+              <li class="nav-item">
+                <a class="nav-link" href="#download">下载客户端</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#subscribe">QQ讨论群</a>
+              </li>
+            </ul>
+          </div>
+        </nav> 
+        <button class="close-button" id="close-button"><i class="lnr lnr-cross"></i></button>
+      </div>      
+  	<!-- Header  Start -->
 
-/* 标题 */
-.header {
-    padding: 80px;
-    text-align: center;
-    background-image:url(minft-003.jpg);
-    background-size: 100%;
-    color: white;
-}
+    <header id="video-area" data-stellar-background-ratio="0.5">    
+      <div id="block" data-vide-bg="video/video"></div>
+      <div class="fixed-top">
+          <div class="container">
+            <div class="logo-menu">
+              <a href="/" class="logo"><img src="/img/logo.png" style="width: 40px; float: left;"><p style="font-size: 25px;">TGteam</p></a>
+              <button class="menu-button" id="open-button"><i class="lnr lnr-menu"></i></button>    
+            </div>           
+          </div>
+      </div>
+      <div class="overlay overlay-2"></div>      
+      <div class="container">
+        <div class="row justify-content-md-center">
+          <div class="col-md-10">
+            <div class="contents text-center">
+              <h1 class="wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="0.3s">TGteam官网-我的世界工作室</h1>
+              <p class="lead  wow fadeIn" data-wow-duration="1000ms" data-wow-delay="400ms">我的世界TGteam官网，做最佛系的mc开发者</p>
+            </div>
+          </div>
+        </div> 
+      </div>      
+    </header>
+    <!-- Header  End --> 
 
-/* 标题字体加大 */
-.header h1 {
-    font-size: 40px;
-}
 
-/* 导航 */
-.navbar {
-    overflow: hidden;
-    background-color: #333;
-}
+    <!-- 工作室 Start -->
+    <section id="services" class="section">
+      <div class="container">
+        <div class="section-header">          
+          <h2 class="section-title wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">TGteam <span>官方网站</span></h2>
+          <hr class="lines wow zoomIn" data-wow-delay="0.3s">
+          <p class="section-subtitle wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">我们同时有</p>
+        </div>
+        <div class="row">
+          <div class="col-md-4 col-sm-6">
+            <div class="item-boxes wow fadeInDown" data-wow-delay="0.2s">
+              <div class="icon">
+                <i class="lnr lnr-layers"></i>
+              </div>
+              <h4>基岩版我的世界服务器<b style="color: blue;">[国际服]</b></h4>
+              <p>IP地址：<b style="color: blue;">基岩版服务器：
+服务器名称：新的世界，新的冒险</b><br>服务器已开已开服<b style="color: blue;">1年</b>左右，<i style="color: blue;">服务器为1000人大型综合服（因为版本不兼容所以暂时限5人。</i>pocketmine官方不支持原版指令，但是我们已不需要指令，因为一切皆可通过插件实现。</p>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <div class="item-boxes wow fadeInDown" data-wow-delay="0.4s">
+              <div class="icon">
+                <i class="lnr lnr-layers"></i>
+              </div>
+              <h4>生存服（推荐）<b style="color: red;">[推荐]</b></h4>
+              <p>服务器ip：<b style="color: blue;">svr.lablog.net</b><br>服务器端口：<b style="color: blue;">4040</b><br>在微软官方原版我的世界的基础上使用BDX、EZ、梦之故里、JSR、CSR等插件加载框架。同时领地系统/生命显示/请求传送，各式各样的玩法尽情体验。并且全GUI式菜单，免去繁琐的命令操作！</p>
+            </div>
+          </div>
+          <!-- <div class="col-md-4 col-sm-6">
+            <div class="item-boxes wow fadeInDown" data-wow-delay="0.6s">
+              <div class="icon">
+                <i class="lnr lnr-chart-bars"></i>
+              </div>
+              <h4>国际版任务空岛（推荐）</h4>
+              <p>服务器ip：<b style="color: blue;">lablog.net</b><br>服务器端口：<b style="color: blue;">19132</b><br>服务器由纯指令建造，流畅无卡顿。内置数十个主线任务，若干支线任务，以及十余个副本。</p>
+            </div>
+          </div> -->
+          <!-- <div class="col-md-4 col-sm-6">
+            <div class="item-boxes wow fadeInDown" data-wow-delay="0.8s">
+              <div class="icon">
+                <i class="lnr lnr-layers"></i>
+              </div>
 
-/* 导航栏样式 */
-.navbar a {
-    float: left;
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 20px;
-    text-decoration: none;
-}
+      </div>
+    </section>
+    <!-- 服务器IP End -->
 
-/* 右侧链接*/
-.navbar a.right {
-    float: right;
-}
+    <!-- 我们的优点 Start -->
+    <section id="features" class="section" data-stellar-background-ratio="0.2">
+      <div class="container">
+        <div class="section-header">          
+          <h2 class="section-title wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">TGteam<span>团队</span></h2>
+          <hr class="lines wow zoomIn" data-wow-delay="0.3s">
+          <p class="section-subtitle wow fadeIn" data-wow-duration="1000ms" data-wow-delay=</p>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+            <div class="content-left text-right wow fadeInLeft animated" data-wow-offset="10">
+              <div class="box-item left">
+                <span class="icon">
+                  <i>1</i>
+                </span>
+                <div class="text">
+                  <h4>公平平等</h4>
+                  <p>人人平等，所有人都可以对工作室提供意见、建议。</p>
+                </div>
+              </div>
+              <div class="box-item left">
+                <span class="icon">
+                  <i>2</i>
+                </span>
+                <div class="text">
+                  <h4>公正公开</h4>
+                  <p>仅处理违反行为准则的玩家，不会随便惩罚玩家。所有大小事都会在群内公开讨论，公开处理。</p>
+                </div>
+              </div>
+              <div class="box-item left">
+                <span class="icon">
+                  <i>3</i>
+                </span>
+                <div class="text">
+                  <h4>重视秩序</h4>
+                  <p>我们重视秩序和玩具素质，不存在随意骂人、人身攻击等行为。</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+            <div class="show-box wow fadeInDown animated" data-wow-offset="10">
+              <img src="img/logo.png" alt="">
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+            <div class="content-right text-left wow fadeInRight animated" data-wow-offset="10">
+              <div class="box-item right">
+                <span class="icon">
+                  <i>4</i>
+                </span>
+                <div class="text">
+                  <h4>服务器运行</h4>
+                  <p>服务器运行于AWS服务。</p>
+                </div>
+              </div>
+              <div class="box-item right">
+                <span class="icon">
+                  <i>5</i>
+                </span>
+                <div class="text">
+                  <h4>资金支持</h4>
+                  <p>不需要。。。</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- 我们的优点 End -->
 
-/* 鼠标移动到链接的颜色 */
-.navbar a:hover {
-    background-color: #ddd;
-    color: black;
-}
+    <!-- 图片展示 start -->
+    <section id="portfolios" class="section">
+      <!-- Container Starts -->
+      <div class="container">
+        <div class="section-header">          
+          <h2 class="section-title wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">服务器 <span>图片</span></h2>
+          <hr class="lines wow zoomIn" data-wow-delay="0.3s">
+          <p class="section-subtitle wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="0.3s">以下是服务器部分经典建筑，包括玩家建筑</p>
+        </div>
+        <div class="row">          
+          <div class="col-md-12">
+            <!-- 按钮列表 start -->
+            <div class="controls text-center wow fadeInUp" data-wow-delay=".6s">
+              <a class="control mixitup-control-active btn btn-common" data-filter="all">
+                All 
+              </a>
+              <a class="control btn btn-common" data-filter=".marketing">
+                插件生存服务器
+              </a>
+              <a class="control btn btn-common" data-filter=".planning">
+                原版生存服务器
+              </a>
+            </div>
+            <!-- 按钮列表 Ends-->          
 
-/* 列容器 */
-.row {  
-    display: -ms-flexbox; /* IE10 */
-    display: flex;
-    -ms-flex-wrap: wrap; /* IE10 */
-    flex-wrap: wrap;
-}
+            <!-- 图片 -->
+            <div id="portfolio" class="row wow fadeInUp" data-wow-delay="0.8s">
+              <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix marketing">
+                <div class="portfolio-item">
+                  <div class="shot-item">
+                    <a class="overlay lightbox" href="img/portfolio/img1.jpg">
+                      <img src="img/portfolio/img1.jpg" alt="" />  
+                      <i class="lnr lnr-plus-circle item-icon"></i>
+                    </a>
+                  </div>               
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix marketing">
+                <div class="portfolio-item">
+                  <div class="shot-item">
+                    <a class="overlay lightbox" href="img/portfolio/img2.jpg">
+                      <img src="img/portfolio/img2.jpg" alt="" />  
+                      <i class="lnr lnr-plus-circle item-icon"></i>
+                    </a>
+                  </div>               
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix marketing">
+                <div class="portfolio-item">
+                  <div class="shot-item">
+                    <a class="overlay lightbox" href="img/portfolio/img3.jpg">
+                      <img src="img/portfolio/ig3.jpg" alt="" />  
+                      <i class="lnr lnr-plus-circle item-icon"></i>
+                    </a>
+                  </div>               
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix planning">
+                <div class="portfolio-item">
+                  <div class="shot-item">
+                    <a class="overlay lightbox" href="img/portfolio/im4.jpg">
+                      <img src="img/portfolio/img.jpg" alt="" />  
+                      <i class="lnr lnr-plus-circle item-icon"></i>
+                    </a>
+                  </div>               
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix planning">
+                <div class="portfolio-item">
+                  <div class="shot-item">
+                    <a class="overlay lightbox" href="img/portfolio/img5.jpg">
+                      <img src="img/portfolio/im5.jpg" alt="" />  
+                      <i class="lnr lnr-plus-circle item-icon"></i>
+                    </a>
+                  </div>               
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix marketing">
+                <div class="portfolio-item">
+                  <div class="shot-item">
+                    <a class="overlay lightbox" href="img/portfolio/img6.jpg">
+                      <img src="img/portfolio/im6.jpg" alt="" />  
+                      <i class="lnr lnr-plus-circle item-icon"></i>
+                    </a>
+                  </div>               
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- 图片展示 Ends -->
 
-/* 创建两个列 */
-/* 边栏 */
-.side {
-    -ms-flex: 30%; /* IE10 */
-    flex: 30%;
-    background-color: #d0d0d0;
-    padding: 20px;
-}
 
-/* 主要的内容区域 */
-.main {   
-    -ms-flex: 70%; /* IE10 */
-    flex: 70%;
-    background: url(background.jpg) no-repeat;
-    background-size: 100% 100%;
-    padding: 20px;
-}
+    <!-- Download  Start -->
+    <section id="download" class="section">
+      <div class="container">
+        <div class="section-header">   
+          <h2 class="section-title wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">游玩本服务器需要<span>1.16.20.03</span>版本的我的世界 即<!--<span>官方最新正式版我的世界</span>--></h2>
+          <p class="section-subtitle wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">如果您没有国际版我的世界，您可以在这里下载我的世界1.16.20.03的<b>安卓版游戏（苹果系统不可使用）</b>，但是我们推荐<b>您去购买正版我的世界</b>来游玩本服务器</p>
+        </div>
+        <div class="row">
+          <div class="col-md-12">            
+            <div class="download-area text-center wow fadeInUp" data-wow-delay="0.3s">
+                <a href="https://lablog-mc-download.oss-cn-beijing.aliyuncs.com/minecraft1.16.20.03.apk" class="btn btn-border"><i class="fa fa-android"></i>下载Minecraft 1.16.20.03</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Download  End -->
 
-/* 测试图片 */
-.fakeimg {
-    background-color: #aaa;
-    width: 100%;
-    padding: 20px;
-}
 
-/* 底部 */
-.footer {
-    padding: 20px;
-    text-align: center;
-    background: #ADADAD;
-}
+    <!-- 讨论群 Start -->
+    <div id="subscribe" class="section">
+      <div class="container">
+        <div class="section-header">          
+          <h2 class="section-title wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">上清阁服务器讨论群 <span>470184703</span></h2>
+          <hr class="lines wow zoomIn" data-wow-delay="0.3s">
+          <p class="section-subtitle wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">任何通知消息都会在群里通知大家</p>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-md-4 col-sm-6">
+            <div class="row justify-content-md-center">
+              <img src="jq.jpg" alt="" style="width: 300px;height: 400px;">
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <p>扫描二维码加群或点击下方按钮加群
+              <div class="textwidget">
+                <a href="https://jq.qq.com/?_wv=1027&k=qTrlbfTB">加入QQ群</a>
+                </a>
+              </div>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 讨论群 End -->
 
-/* 响应式布局 - 在屏幕设备宽度尺寸小于 700px 时, 让两栏上下堆叠显示 */
-@media screen and (max-width: 700px) {
-    .row {   
-        flex-direction: column;
-    }
-}
+    <!-- Footer  Start -->
+    <footer>          
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <!-- <div class="social-icons wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="0.3s">
+              <ul>
+                <li class="facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li class="twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li class="google-plus"><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                <li class="linkedin"><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                <li class="pinterest"><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                <li class="dribbble"><a href="#"><i class="fa fa-dribbble"></i></a></li>
+              </ul>
+            </div> -->
+            <div style="margin-left: 10%;width: 40%;float: left;">
+              <div class="site-info wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="0.3s">
+                <p class="lablogttf">昔日称雄今入笼，森然王气未曾终。<br> 为囚不惧威长在，怒目耽耽不屈从。</p>
+                <p>&copy; 2020. <a href="https://mc.lablog.net">我的世界TGteam</a>. TM.</p>
+                <p>©2021 TGteam</a></p>
+              </div>
+            </div>
+            <div style="margin-right: 10%;width: 40%;float: right;">
+              <div class="site-info wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="0.3s">
+                <img src="https://lablog.oss-cn-beijing.aliyuncs.com/sqg/%E4%B8%8A%E6%B8%8E9%98%8.png" alt="" style="width: 50%;height: 75%;">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Footer  End --> 
 
-/* 响应式布局 - 在屏幕设备宽度尺寸小于 400px 时, 让导航栏目上下堆叠显示 */
-@media screen and (max-width: 400px) {
-    .navbar a {
-        float: none;
-        width: 100%;
-    }
-}
-</style>
-</head>
-<body onload="checkCookie()">
-<div class="header" style="color:#708069">
-  <h1>TGteam官方网站</h1>
-  <p>by やまもと千寻（QQ：2191383788）</p>
-</div>
+    <!-- Go To Top Link -->
+    <a href="#" class="back-to-top">
+      <i class="lnr lnr-arrow-up"></i>
+    </a>
 
-<div class="navbar">
-  <a href="xlsx2.html">工作室成员概况</a>
-  <a href="faq.html">问题反馈</a>
-  <a href="https://jq.qq.com/?_wv=1027&k=qTrlbfTB">加入QQ群</a>
-  <a href="htmldjjs6.html">html5新页面（浏览器不支持的千万别点）</a>
-  <a href="https://www.github.com">GitHub-5000万开发者的家园</a>
-</div>
+    <div id="loader">
+      <div class="spinner">
+        <div class="double-bounce1"></div>
+        <div class="double-bounce2"></div>
+      </div>
+    </div>    
 
-<div class="row">
-  <div class="side" style="color: #000000">
-      <h2>侧边菜单</h2>
-      <input id="myInput" value="输入搜索的内容...">
-<button id="myBtn" onclick="javascript:alert('想得美，搜索个毛线啊')">搜索</button>
-      <div class="fakeimg" style="height:200px;"><img src="logo1.jpg" width="150" height="150"><div align="center" style="color: #CE0000">工作室LOGO</div></div>
-      
-      <h3>更多内容</h3><br>
-      <div class="fakeimg" style="height:60px;"><a href="rules.html">交流群群规</a></div><br>
-      <div class="fakeimg" style="height:60px;"><a href="faq.html">问题反馈（FAQ）</a></div><br>
-      <div class="fakeimg" style="height:60px;"><a href="https://mc.163.com/">点击下载我的世界网易版</a></div><br>
-       <div class="fakeimg" style="height:60px;"><a href="https://www.minecraft.net/">我的世界国际版官网</a></div><br>
-         <div class="fakeimg" style="height:100px;"><a href="https://minecraft-zh.gamepedia.com/index.php?title=Minecraft_Wiki&variant=zh">Minecraft wiki（加载速度可能会慢请耐心等待，很长时间都进不去请挂梯子）</a></div><br>
-           <div class="fakeimg" style="height:60px;">暂未开放</div><br>
-</div>
-  <div class="main" style="color: #0000E3">
-      <h2>已发布作品</h2>
-      <div class="fakeimg" style="height:200px;"><h4>著名现代建筑（一）<h4>USU城市国<br>暂时没有开放</h4></div>
-      <p></p>
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script src="js/jquery-min.js"></script>
+    <script src="js/tether.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/classie.js"></script>
+    <script src="js/mixitup.min.js"></script>
+    <script src="js/nivo-lightbox.js"></script>
+    <script src="js/owl.carousel.min.js"></script>    
+    <script src="js/jquery.stellar.min.js"></script>    
+    <script src="js/jquery.nav.js"></script>    
+    <script src="js/smooth-scroll.js"></script>    
+    <script src="js/smooth-on-scroll.js"></script>    
+    <script src="js/wow.js"></script>    
+    <script src="js/menu.js"></script>
+    <script src="js/jquery.vide.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>    
+    <script src="js/jquery.magnific-popup.min.js"></script>    
+    <script src="js/waypoints.min.js"></script>    
+    <script src="js/form-validator.min.js"></script>
+    <script src="js/contact-form-script.js"></script>     
+    <script src="js/main.js"></script>
     
-      <br>
-      <h2>工作室官方</h2>
-      <div class="fakeimg" style="height:650px;">
-        <h4>交流群：828528280
-        <br>工作室成员：阿东__H（真名胡正东），暴走P_初音未来，yuzisauce，sushsus，Ritual_KEVIN
-        <br>工作室服务器（基岩版）
-        <br>IP地址：node1.magmanode.com
-        <br>端口：25656
-        <br>服务器机房位置：日本-东京 延迟（国内）：95ms（江苏）
-        <br>服务器正在建设中，内核使用pocketmine-MP，任何人可进，但你是永远无法开挂的。服务器配置了自动封禁系统，支持版本为基岩最新版mc（国际版）。
-        <br>工作室介绍：我们主要还原现代建筑，制作皮肤，免费资源，也为一些人代投稿作品。</h4></div>
-        <p></p>
-
-</div>
-  <div class="main" style="color: #cce5ff">
-      <h2>服务器状态</h2>
-      <div class="fakeimg" style="height:700px;">
-        <h4>交流群：828528280
-        <br>所有者：skxun
-        <br>支持版本：基岩版1.17.2（最新版）
-        <br>IP地址：node1.magmanode.com
-        <br>端口：25656
-        <br>服务器机房位置：日本-东京 延迟（国内）：95ms（江苏）
-        <br>配置：带宽 500M，处理器 2核 运行内存 512MB（服务器以前是开vρη用的，后来就改装成了服务器，所以配置不咋地，但带宽可以。本人正在考虑集资重新开服，有意者联系QQ2191383788，有机会得服务器管理。）
-        <br>已注册人数（实时更新）：37人
-        <br>最高同时在线人数：5人（超过5人服务器就会崩溃，超过3人便会明显卡顿）
-        <p></p>
-
-  <h4></div>
-
-<p>持续更新中</p>
-  
-
-</div>
-
-<div class="footer">
-
-<center>
-<span id="showsectime" style="color:#FF0000;"></span>
-<script type="text/javascript">
-function NewDate(str) { 
-str = str.split('-'); 
-var date = new Date(); 
-date.setUTCFullYear(str[0], str[1] - 1, str[2]); 
-date.setUTCHours(0, 0, 0, 0); 
-return date; 
-} 
-function showsectime() {
-var birthDay =NewDate("2017-01-013"); //此处设置开始时间
-var today=new Date();
-var timeold=today.getTime()-birthDay.getTime();
-var sectimeold=timeold/1000
-var secondsold=Math.floor(sectimeold);
-var msPerDay=24*60*60*1000; var e_daysold=timeold/msPerDay;
-var daysold=Math.floor(e_daysold);
-var e_hrsold=(daysold-e_daysold)*-24;
-var hrsold=Math.floor(e_hrsold);
-var e_minsold=(hrsold-e_hrsold)*-60;
-var minsold=Math.floor((hrsold-e_hrsold)*-60); var seconds=Math.floor((minsold-e_minsold)*-60).toString();
-document.getElementById("showsectime").innerHTML = "本站已安全运行"+daysold+"天"+hrsold+"小时"+minsold+"分"+seconds+"秒";
-setTimeout(showsectime, 1000);
-}showsectime();
-</script>
-</center>
-
-<SCRIPT language=JavaScript>
-function tick() {
-var years,months,days,hours, minutes, seconds;
-var intYears,intMonths,intDays,intHours, intMinutes, intSeconds;
-var today;
-today = new Date(); //系统当前时间
-intYears = today.getFullYear(); //得到年份,getFullYear()比getYear()更普适
-intMonths = today.getMonth() + 1; //得到月份，要加1
-intDays = today.getDate(); //得到日期
-intHours = today.getHours(); //得到小时 
-intMinutes = today.getMinutes(); //得到分钟
-intSeconds = today.getSeconds(); //得到秒钟
-years = intYears + "-"; 
-
-if(intMonths < 10 ){
-months = "0" + intMonths +"-";
-} else {
-months = intMonths +"-";
-}
-if(intDays < 10 ){
-days = "0" + intDays +" ";
-} else {
-days = intDays + " ";
-}
-if (intHours == 0) {
-hours = "00:";
-} else if (intHours < 10) {
-hours = "0" + intHours+":";
-} else {
-hours = intHours + ":";
-}
-if (intMinutes < 10) {
-minutes = "0"+intMinutes+":";
-} else {
-minutes = intMinutes+":";
-}
-if (intSeconds < 10) {
-seconds = "0"+intSeconds+" ";
-} else {
-seconds = intSeconds+" ";
-}
-timeString = years+months+days+hours+minutes+seconds;
-Clock.innerHTML = timeString;
-window.setTimeout("tick();", 1000);
-}
-window.onload = tick;
-</SCRIPT>
-</head>
-<BODY leftMargin=0 topMargin=0 marginwidth="0" marginheight="0">
-<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
-<TR bgColor=#73a3d4 height=40>
-<TD noWrap align=right width=209 ><SPAN id="Clock"></SPAN></TD>
-</TR>
-</TABLE>
-
-  <p>©2020 Google   感谢Google提供的技术指导</p>
-</div>
-
-</body>
-<!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
-
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-analytics.js"></script>
-
-<script>
-  // Your web app's Firebase configuration
-  var firebaseConfig = {
-    apiKey: "AIzaSyCudJAILEUGKyt_b1DRkZ_498D8SGiuVCw",
-    authDomain: "id212357.firebaseapp.com",
-    databaseURL: "https://id212357.firebaseio.com",
-    projectId: "id212357",
-    storageBucket: "id212357.appspot.com",
-    messagingSenderId: "351587635513",
-    appId: "1:351587635513:web:e2581b0b8ffa5e62c5d8e8",
-    measurementId: "G-6DLXMZMQW2"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
-</script>
+  </body>
 </html>
