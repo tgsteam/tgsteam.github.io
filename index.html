@@ -42,13 +42,46 @@
     <link rel="stylesheet" href="css/menu_sideslide.css">
     <link rel="stylesheet" href="css/main.css">    
     <link rel="stylesheet" href="css/responsive.css">
-    <!-- MDUI CSS -->
-		<link
-		rel="stylesheet"
-		href="https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/css/mdui.min.css"
-		integrity="sha384-cLRrMq39HOZdvE0j6yBojO4+1PrHfB7a9l5qLcmRm/fiWXYY+CndJPmyu5FV/9Tw"
-		crossorigin="anonymous"
-		/>
+    <!-- AJAX JavaScript -->
+    <script src="http://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript">
+     var getting = {
+	url:'//[xxx.xxx.xxx]?ip=[play.imc.re]&port=[29046]',
+	dataType:'json',
+	success:function(res) {
+		console.log(res);
+		if(res.code=200){
+			$("#status").html(res.status);
+			$("#ip").html(res.ip);
+			$("#port").html(res.port);
+			$("#agreement").html(res.agreement);
+			$("#real").html(res.real);
+			$("#location").html(res.location);
+			$("#motd").html(res.motd);
+			$("#version").html(res.version);
+			$("#online").html(res.online);
+			$("#max").html(res.max);
+			$("#gamemode").html(res.gamemode);
+			$("#delay").html(res.delay);
+		}else{
+			$("#status").html(无法连接);
+			$("#ip").html(无法连接);
+			$("#port").html(无法连接);
+			$("#agreement").html(无法连接);
+			$("#real").html(无法连接);
+			$("#location").html(无法连接);
+			$("#motd").html(无法连接);
+			$("#version").html(无法连接);
+			$("#online").html(无法连接);
+			$("#max").html(无法连接);
+			$("#gamemode").html(无法连接);
+			$("#delay").html(无法连接);
+		}
+	}
+};
+//关键在这里，Ajax定时访问服务端，不断获取数据 ，这里是1秒请求一次。
+window.setInterval(function(){$.ajax(getting)},1000);
+</script>
 
     <style>
       @font-face {
