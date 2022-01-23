@@ -1,0 +1,535 @@
+<!doctype html>
+<html lang="zh-cmn-Hans">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no"/>
+		<meta name="renderer" content="webkit"/>
+		<meta name="force-rendering" content="webkit"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+
+		<!-- MDUI CSS -->
+		<link
+		rel="stylesheet"
+		href="https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/css/mdui.min.css"
+		integrity="sha384-cLRrMq39HOZdvE0j6yBojO4+1PrHfB7a9l5qLcmRm/fiWXYY+CndJPmyu5FV/9Tw"
+		crossorigin="anonymous"
+		/>
+		<title>服务器实时状态</title>
+	</head>
+	<body class="mdui-theme-primary-indigo mdui-theme-accent-pink mdui-theme-layout-auto">
+	
+		<!-- MDUI header -->
+		<div class="mdui-appbar">
+			<div class="mdui-toolbar mdui-color-theme">
+				<a href="//fatda.cn" class="mdui-typo-headline mdui-hidden-xs" one-link-mark="yes">FatDa</a>
+				<a class="mdui-typo-title" one-link-mark="yes">服务器实时状态实例</a>
+				<div class="mdui-toolbar-spacer"></div>
+				<a href="https://fatda.cn" target="_blank" class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-tooltip="{content: 'FatDa官网'}" one-link-mark="yes">
+				<i class="mdui-icon material-icons">&#xe873;</i>
+				</a>
+				<a href="https://chizg.cn" target="_blank" class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-tooltip="{content: '作者博客'}" one-link-mark="yes">
+				<i class="mdui-icon material-icons">&#xe87c;</i>
+				</a>
+			</div>
+		</div>
+	
+		<!-- MDUI boder -->
+		<div class="mdui-container doc-container" style="height: auto !important;">
+			<br><br><br>
+			<h1 class="doc-title mdui-text-color-theme">简介</h1>
+			<p>该实例包括"服务器实时状态获取"的HTML,JS,php代码以及从前端到后端，从教程到应用的全部内容-BY CZG</p>
+			
+			<br>
+			<div class="mdui-typo">
+				<h4 class="doc-article-title">演示效果 <a class="doc-anchor" id="css" one-link-mark="yes"></a></h4>
+				<div class="mdui-table-fluid">
+					<table class="mdui-table">
+						<thead>
+							<tr>
+								<th>项目</th>
+								<th class="mdui-table-col-numeric">状态</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>服务器名称</td>
+								<td><div class="mdui-typo-title" id="motd">等待加载</div></td>
+							</tr>
+							<tr>
+								<td>IP</td>
+								<td><div class="mdui-typo-title" id="ip">等待加载</div></td>
+							</tr>
+							<tr>
+								<td>REALIP</td>
+								<td><div class="mdui-typo-title" id="real">等待加载</div></td>
+							</tr>
+							<tr>
+								<td>端口</td>
+								<td><div class="mdui-typo-title" id="port">等待加载</div></td>
+							</tr>
+							<tr>
+								<td>服务器所在地</td>
+								<td><div class="mdui-typo-title" id="location">等待加载</div></td>
+							</tr>						
+							<tr>
+								<td>服务器版本</td>
+								<td><div class="mdui-typo-title" id="version">等待加载</div></td>
+							</tr>
+							<tr>
+								<td>服务器状态</td>
+								<td><div class="mdui-typo-title" id="status">等待加载</div></td>
+							</tr>						
+							<tr>
+								<td>协议本版</td>
+								<td><div class="mdui-typo-title" id="agreement">等待加载</div></td>
+							</tr>
+							<tr>
+								<td>在线人数</td>
+								<td><div class="mdui-typo-title"><small id="online">等待加载</small>/<small id="max">等待加载</small></div></td>
+							</tr>
+							<tr>
+								<td>游戏模式</td>
+								<td><div class="mdui-typo-title" id="gamemode">等待加载</div></td>
+							</tr>
+							<tr>
+								<td>有效延时</td>
+								<td><div class="mdui-typo-title" id="delay">等待加载</div>ms</td>
+							</tr>						
+						</tbody>
+					</table>
+				</div>
+			</div>
+			
+			<br>
+			<div class="mdui-typo">
+				<h4 class="doc-article-title">简单应用 <a class="doc-anchor" id="css" one-link-mark="yes"></a></h4>
+				<p>将 <code>&lt;HTML&gt;</code> 和 <code>&lt;JavaScript&gt;</code> 的代码，分别放入到您的HTML页面中即可。</p>
+				<p>注意: <code>&lt;JavaScript&gt;</code> 中的<code>"//xxx.xxx.xxx/?ip={ip}&amp;port=[端口]"</code>需分别替换为 API地址 目标服务器ip以及端口。</p>
+				<p>补充: API地址可选用<code>https://motdpe.blackbe.xyz/api.php?ip=</code>（例<code>https://motdpe.blackbe.xyz/api.php?ip=mcp6.rhymc.com&port=1112</code>）或自己搭建API</p>
+				<pre>
+					<code class="lang-html hljs xml">
+&lt;!-- 表格 HTML --&gt;
+&lt;table&gt;
+	&lt;thead&gt;
+		&lt;tr&gt;
+			&lt;th&gt;项目&lt;/th&gt;
+			&lt;th&gt;状态&lt;/th&gt;
+		&lt;/tr&gt;
+	&lt;/thead&gt;
+	&lt;tbody&gt;
+		&lt;tr&gt;
+			&lt;td&gt;服务器名称&lt;/td&gt;
+			&lt;td&gt;&lt;div id=&quot;motd&quot;&gt;等待加载&lt;/div&gt;&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;IP&lt;/td&gt;
+			&lt;td&gt;&lt;div id=&quot;ip&quot;&gt;等待加载&lt;/div&gt;&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;REALIP&lt;/td&gt;
+			&lt;td&gt;&lt;div id=&quot;real&quot;&gt;等待加载&lt;/div&gt;&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;端口&lt;/td&gt;
+			&lt;td&gt;&lt;div id=&quot;port&quot;&gt;等待加载&lt;/div&gt;&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;服务器所在地&lt;/td&gt;
+			&lt;td&gt;&lt;div id=&quot;location&quot;&gt;等待加载&lt;/div&gt;&lt;/td&gt;
+		&lt;/tr&gt;						
+		&lt;tr&gt;
+			&lt;td&gt;服务器版本&lt;/td&gt;
+			&lt;td&gt;&lt;div id=&quot;version&quot;&gt;等待加载&lt;/div&gt;&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;服务器状态&lt;/td&gt;
+			&lt;td&gt;&lt;div id=&quot;status&quot;&gt;等待加载&lt;/div&gt;&lt;/td&gt;
+		&lt;/tr&gt;						
+		&lt;tr&gt;
+			&lt;td&gt;协议本版&lt;/td&gt;
+			&lt;td&gt;&lt;div id=&quot;agreement&quot;&gt;等待加载&lt;/div&gt;&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;在线人数&lt;/td&gt;
+			&lt;td&gt;&lt;div class=&quot;mdui-typo-title&quot;&gt;&lt;small id=&quot;online&quot;&gt;等待加载&lt;/small&gt;/&lt;small id=&quot;max&quot;&gt;等待加载&lt;/small&gt;&lt;/div&gt;&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;游戏模式&lt;/td&gt;
+			&lt;td&gt;&lt;div id=&quot;gamemode&quot;&gt;等待加载&lt;/div&gt;&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;有效延时&lt;/td&gt;
+			&lt;td&gt;&lt;div id=&quot;delay&quot;&gt;等待加载&lt;/div&gt;ms&lt;/td&gt;
+		&lt;/tr&gt;						
+	&lt;/tbody&gt;
+&lt;/table&gt;
+					</code>
+				</pre>
+				<pre>
+					<code class="lang-html hljs xml">				
+&lt;!-- AJAX JavaScript --&gt;
+&lt;script src=&quot;http://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+var getting = {
+	url:&#x27;//[xxx.xxx.xxx]?ip=[ip]&amp;port=[端口]&#x27;,
+	dataType:&#x27;json&#x27;,
+	success:function(res) {
+		console.log(res);
+		if(res.code=200){
+			$(&quot;#status&quot;).html(res.status);
+			$(&quot;#ip&quot;).html(res.ip);
+			$(&quot;#port&quot;).html(res.port);
+			$(&quot;#agreement&quot;).html(res.agreement);
+			$(&quot;#real&quot;).html(res.real);
+			$(&quot;#location&quot;).html(res.location);
+			$(&quot;#motd&quot;).html(res.motd);
+			$(&quot;#version&quot;).html(res.version);
+			$(&quot;#online&quot;).html(res.online);
+			$(&quot;#max&quot;).html(res.max);
+			$(&quot;#gamemode&quot;).html(res.gamemode);
+			$(&quot;#delay&quot;).html(res.delay);
+		}else{
+			$(&quot;#status&quot;).html(无法连接);
+			$(&quot;#ip&quot;).html(无法连接);
+			$(&quot;#port&quot;).html(无法连接);
+			$(&quot;#agreement&quot;).html(无法连接);
+			$(&quot;#real&quot;).html(无法连接);
+			$(&quot;#location&quot;).html(无法连接);
+			$(&quot;#motd&quot;).html(无法连接);
+			$(&quot;#version&quot;).html(无法连接);
+			$(&quot;#online&quot;).html(无法连接);
+			$(&quot;#max&quot;).html(无法连接);
+			$(&quot;#gamemode&quot;).html(无法连接);
+			$(&quot;#delay&quot;).html(无法连接);
+		}
+	}
+};
+//关键在这里，Ajax定时访问服务端，不断获取数据 ，这里是1秒请求一次。
+window.setInterval(function(){$.ajax(getting)},1000);
+&lt;/script&gt;
+					</code>
+				</pre>
+			</div>
+			
+			<br>
+			<div class="mdui-typo">
+				<h4 class="doc-article-title">前端说明 <a class="doc-anchor" id="css" one-link-mark="yes"></a></h4>		
+				<p>如果，您不满足简单应用，想要做出不同的事实数显，那么请继续往下看</p>
+				<p>原理:通过AJAX轮询对后端发起请求获取数据<p>
+				<p><strong>应用:</strong>
+				<br>1.将"简单应用中的"<code>JavaScript</code>给放入您的HTML代码中
+				<br>2.在您的HTML中找到一个合适的标签,并对照表,放入相应的id属性即可(例:<code>游戏人数:&lt;small id=&quot;online&quot;&gt;等待加载&lt;/small&gt;/&lt;small id=&quot;max&quot;&gt;等待加载&lt;/small&gt;</code>)
+				<pre>
+				<br>#服务器名称 | id="motd"
+				<br>#IP | id="ip"
+				<br>#REALIP | id="real"
+				<br>#端口 | id="port"
+				<br>#服务器所在地 | id="location"
+				<br>#服务器版本 | id="version"
+				<br>#服务器状态 | id="status"
+				<br>#协议本版 | id="agreement"
+				<br>#在线人数/最大人数 | id="online/id="max"
+				<br>#游戏模式 | id="gamemode"
+				<br>#有效延时 | id="delay"
+				</pre>
+				<p>
+				
+			</div>
+			
+			<br>
+			<div class="mdui-typo">
+				<h4 class="doc-article-title">后端说明 <a class="doc-anchor" id="css" one-link-mark="yes"></a></h4>
+				<br><p><strong>1.请求方式</strong></p>
+				<p>通过UDP协议获取MCPE的服务器状态<br>
+				请求方式：<code>GET/POST</code></p>
+				<p><strong>2.请求参数</strong></p>
+				<div class="mdui-table-fluid">
+					<table class="mdui-table">
+						<thead>
+							<tr>
+								<th>参数</th>
+								<th>示例</th>
+								<th>描述</th>
+							</tr>
+						</thead>
+						<tbody>
+						<tr>
+						<td>ip</td>
+						<td>mc.52craft.cc</td>
+						<td>服务器IP地址</td>
+						</tr>
+						<tr>
+						<td>port</td>
+						<td>2020</td>
+						<td>服务器端口</td>
+						</tr>
+						</tbody>
+					</table>
+				</div>
+				<p><strong>3.返回参数</strong></p>
+				<div class="mdui-table-fluid">
+					<table class="mdui-table">
+						<thead>
+							<tr>
+								<th>参数</th>
+								<th>示例</th>
+								<th>描述</th>
+							</tr>
+						</thead>
+						<tbody>
+						<tr>
+						<td>code</td>
+						<td>200</td>
+						<td>接口响应状态码</td>
+						</tr>
+						<tr>
+						<td>status</td>
+						<td>online</td>
+						<td>服务器状态</td>
+						</tr>
+						<tr>
+						<td>ip</td>
+						<td>mc.52craft.cc</td>
+						<td>返回查询IP</td>
+						</tr>
+						<tr>
+						<td>port</td>
+						<td>2020</td>
+						<td>返回查询端口</td>
+						</tr>
+						<tr>
+						<td>real</td>
+						<td>222.22.333.22</td>
+						<td>真实IP地址</td>
+						</tr>
+						<tr>
+						<td>location</td>
+						<td>北京省 联通</td>
+						<td>线路所在位置</td>
+						</tr>
+						<tr>
+						<td>motd</td>
+						<td>BorderLands In Minecraft</td>
+						<td>服务器广播内容Motd</td>
+						</tr>
+						<tr>
+						<td>agreement</td>
+						<td>389</td>
+						<td>协议版本</td>
+						</tr>
+						<tr>
+						<td>version</td>
+						<td>1.14.30</td>
+						<td>客户端版本</td>
+						</tr>
+						<tr>
+						<td>online</td>
+						<td>3</td>
+						<td>服务器在线人数</td>
+						</tr>
+						<tr>
+						<td>max</td>
+						<td>10</td>
+						<td>服务器人数上限</td>
+						</tr>
+						<tr>
+						<td>gamemode</td>
+						<td>Survival</td>
+						<td>游戏模式</td>
+						</tr>
+						<tr>
+						<td>delay</td>
+						<td>64</td>
+						<td>连接服务器延迟(ms)</td>
+						</tr>
+						</tbody>
+					</table>
+				</div>
+				<strong>4.应用</strong></p>
+				<p>搭建API,下面便是API的PHP源码,首先你需要搭建PHP语言的网站环境(不多赘述,不会百度)将代码放入PHP环境中即可<br>
+				<pre>
+					<code>
+&lt;?php
+header(&quot;Access-Control-Allow-Origin: *&quot;);
+header(&#x27;Content-type: application/json&#x27;);
+error_reporting(0);
+
+/**
+ * Get real ip from $_SERVER
+ * @return String
+ * 
+ */
+function getRealIp()
+{
+	$ip = false;
+	if (!empty($_SERVER[&quot;HTTP_CLIENT_IP&quot;])) {
+		$ip = $_SERVER[&quot;HTTP_CLIENT_IP&quot;];
+	}
+	if (!empty($_SERVER[&#x27;HTTP_X_FORWARDED_FOR&#x27;])) {
+		$ips = explode(&quot;, &quot;, $_SERVER[&#x27;HTTP_X_FORWARDED_FOR&#x27;]);
+		if ($ip) {
+			array_unshift($ips, $ip);
+			$ip = FALSE;
+		}
+		for ($i = 0; $i &lt; count($ips); $i++) {
+			if (!preg_match(&quot;^(10|172\.16|192\.168)\.&quot;, $ips[$i])) {
+				$ip = $ips[$i];
+				break;
+			}
+		}
+	}
+	return ($ip ? $ip : $_SERVER[&#x27;REMOTE_ADDR&#x27;]);
+}
+
+/**
+ * Check Empty or Isset
+ * @param mixed ...$a
+ * @return bool
+ * 
+ */
+function hasEmpty(...$a)
+{
+	foreach ($a as $key =&gt; $val) {
+		if (empty($val) || $val == null || $val == []) return true;
+	}
+	return false;
+}
+
+/**
+ * Get Address By IP
+ * @param string $ip
+ * @param bealoon
+ * @return String
+ * 
+ */
+function getLocation($ip = false)
+{
+	$ip = !$ip ? getRealIp() : $ip;
+	$s = file_get_contents(&quot;http://whois.pconline.com.cn/ip.jsp?ip={$ip}&quot;, true);
+	$encode = mb_detect_encoding($s, array(&quot;ASCII&quot;, &#x27;UTF-8&#x27;, &quot;GB2312&quot;, &quot;GBK&quot;, &#x27;BIG5&#x27;));
+	$s = mb_convert_encoding($s, &#x27;UTF-8&#x27;, $encode);
+	$s = str_replace(PHP_EOL, &#x27;&#x27;, $s);
+	$s = str_replace(&quot;\r&quot;, &#x27;&#x27;, $s);
+	return $s;
+}
+
+if (!hasEmpty($_REQUEST[&#x27;ip&#x27;], $_REQUEST[&#x27;port&#x27;])) {
+	$ip = $_REQUEST[&#x27;ip&#x27;];
+	$port = $_REQUEST[&#x27;port&#x27;];
+	$t1 = microtime(true);
+	if ($handle = stream_socket_client(&quot;udp://{$ip}:{$port}&quot;, $errno, $errstr, 2)) {
+		stream_set_timeout($handle, 2);
+		fwrite($handle, hex2bin(&#x27;0100000000240D12D300FFFF00FEFEFEFEFDFDFDFD12345678&#x27;) . &quot;\n&quot;);
+		$result = strstr(fread($handle, 1024), &quot;MCPE&quot;);
+		fclose($handle);
+		$data = explode(&quot;;&quot;, $result);
+		$data[&#x27;1&#x27;] = preg_replace(&quot;/§[a-z A-Z 0-9]{1}/s&quot;, &#x27;&#x27;, $data[&#x27;1&#x27;]);
+		if (!hasEmpty($data, $data[&#x27;1&#x27;])) {
+			$t2 = microtime(true);
+			$real = gethostbyname($ip);
+			$array = [
+				&#x27;code&#x27; =&gt; 200,
+				&#x27;status&#x27; =&gt; &#x27;online&#x27;,
+				&#x27;ip&#x27; =&gt; $ip,
+				&#x27;real&#x27; =&gt; $real,
+				&#x27;location&#x27; =&gt; getLocation($real),
+				&#x27;port&#x27; =&gt; $port,
+				&#x27;motd&#x27; =&gt; $data[&#x27;1&#x27;],
+				&#x27;agreement&#x27; =&gt; $data[&#x27;2&#x27;],
+				&#x27;version&#x27; =&gt; $data[&#x27;3&#x27;],
+				&#x27;online&#x27; =&gt; $data[&#x27;4&#x27;],
+				&#x27;max&#x27; =&gt; $data[&#x27;5&#x27;],
+				&#x27;gamemode&#x27; =&gt; $data[&#x27;8&#x27;],
+				&#x27;delay&#x27; =&gt; round($t2 - $t1, 3) * 1000
+			];
+		} else {
+			$array = [
+				&#x27;code&#x27; =&gt; 203,
+				&#x27;status&#x27; =&gt; &#x27;offline&#x27;
+			];
+		}
+	} else {
+		$array = [
+			&#x27;code&#x27; =&gt; 202,
+			&#x27;status&#x27; =&gt; &#x27;offline&#x27;
+		];
+	}
+} else {
+	$array = [
+		&#x27;code&#x27; =&gt; 201,
+		&#x27;status&#x27; =&gt; &#x27;offline&#x27;
+	];
+}
+
+exit(json_encode($array));
+					</code>
+				</pre>
+			</div>
+			
+			<br>
+			<div class="mdui-typo">
+				<h4 class="doc-article-title">到此结束 <a class="doc-anchor" id="css" one-link-mark="yes"></a></h4>
+				<p><strong>版权属于 <a href="//fatda.cn">FatDa</a>由<a href="//chizg.cn">CZG</a></strong>编写</p>
+				<p>作品采用：本作品采用 <a rel="license nofollow" href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">知识共享署名-相同方式共享 4.0 国际许可协议</a> 进行许可。</p>
+			</div>
+		</div>
+		
+		<br><br><br>
+
+		<div class="mdui-color-theme">
+			<div class="mdui-container">
+				<br>
+				<p class="mdui-center"><strong>Copyright © 2020 <a href="//fatda.cn">FatDa</a> Made by <a href="//chizg.cn">CZG</a></strong></p>
+				<br>
+			</div>
+		</div>
+		
+		<!-- AJAX JavaScript -->
+		<script src="http://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js"></script>
+		<script type="text/javascript">
+		var getting = {
+			url:'https://motdpe.blackbe.xyz/api.php?ip=mcp6.rhymc.com&port=1112',
+			dataType:'json',
+			success:function(res) {
+				console.log(res);
+				if(res.code=200){
+					$("#status").html(res.status);
+					$("#ip").html(res.ip);
+					$("#port").html(res.port);
+					$("#agreement").html(res.agreement);
+					$("#real").html(res.real);
+					$("#location").html(res.location);
+					$("#motd").html(res.motd);
+					$("#version").html(res.version);
+					$("#online").html(res.online);
+					$("#max").html(res.max);
+					$("#gamemode").html(res.gamemode);
+					$("#delay").html(res.delay);
+				}else{
+					$("#status").html(无法连接);
+					$("#ip").html(无法连接);
+					$("#port").html(无法连接);
+					$("#agreement").html(无法连接);
+					$("#real").html(无法连接);
+					$("#location").html(无法连接);
+					$("#motd").html(无法连接);
+					$("#version").html(无法连接);
+					$("#online").html(无法连接);
+					$("#max").html(无法连接);
+					$("#gamemode").html(无法连接);
+					$("#delay").html(无法连接);
+				}
+			}
+		};
+		//关键在这里，Ajax定时访问服务端，不断获取数据 ，这里是1秒请求一次。
+		window.setInterval(function(){$.ajax(getting)},1000);
+		</script>
+		
+		<!-- MDUI JavaScript -->
+		<script
+		src="https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/js/mdui.min.js"
+		integrity="sha384-gCMZcshYKOGRX9r6wbDrvF+TcCCswSHFucUzUPwka+Gr+uHgjlYvkABr95TCOz3A"
+		crossorigin="anonymous"
+		></script>
+	</body>
+</html>
