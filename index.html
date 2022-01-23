@@ -179,6 +179,46 @@ window.setInterval(function(){$.ajax(getting)},1000);
               <p>服务器地址：<b style="color: green;">play.imc.re</b><br>服务器端口：<b style="color: blue;">29046</b><br>使用的是微软官方内核。</p>
             </div>
           </div>
+                <!-- AJAX JavaScript -->
+		<script src="http://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js"></script>
+		<script type="text/javascript">
+		var getting = {
+			url:'https://motdpe.blackbe.xyz/api.php?ip=mcp6.rhymc.com&port=1112',
+			dataType:'json',
+			success:function(res) {
+				console.log(res);
+				if(res.code=200){
+					$("#status").html(res.status);
+					$("#ip").html(res.ip);
+					$("#port").html(res.port);
+					$("#agreement").html(res.agreement);
+					$("#real").html(res.real);
+					$("#location").html(res.location);
+					$("#motd").html(res.motd);
+					$("#version").html(res.version);
+					$("#online").html(res.online);
+					$("#max").html(res.max);
+					$("#gamemode").html(res.gamemode);
+					$("#delay").html(res.delay);
+				}else{
+					$("#status").html(无法连接);
+					$("#ip").html(无法连接);
+					$("#port").html(无法连接);
+					$("#agreement").html(无法连接);
+					$("#real").html(无法连接);
+					$("#location").html(无法连接);
+					$("#motd").html(无法连接);
+					$("#version").html(无法连接);
+					$("#online").html(无法连接);
+					$("#max").html(无法连接);
+					$("#gamemode").html(无法连接);
+					$("#delay").html(无法连接);
+				}
+			}
+		};
+		//关键在这里，Ajax定时访问服务端，不断获取数据 ，这里是1秒请求一次。
+		window.setInterval(function(){$.ajax(getting)},1000);
+		</script>
                                        <div class="mdui-table-fluid">
 					<table class="mdui-table">
 						<thead>
